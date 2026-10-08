@@ -1,0 +1,19 @@
+{
+  "name": "tafla",
+  "owner": {
+    "name": "GRID",
+    "url": "https://www.tafla.is"
+  },
+  "metadata": {
+    "description": "Tafla shows the working behind a number as a walkthrough. The Tafla plugin adds its MCP server and a skill that says when to hand a calculation to it."
+  },
+  "plugins": [
+    {
+      "name": "tafla",
+      "source": "./plugins/tafla",
+      "description": "Calculation walkthroughs for AI tools. Show the working behind a calculation as a Tafla walkthrough. Adds the Tafla MCP server and a skill that says when to use it.",
+      "homepage": "https://www.tafla.is/agents",
+      "category": "productivity"
+    }
+  ]
+}

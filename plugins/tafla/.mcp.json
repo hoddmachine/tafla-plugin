@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "tafla": {
+      "type": "http",
+      "url": "https://www.tafla.is/api/mcp"
+    }
+  }
+}

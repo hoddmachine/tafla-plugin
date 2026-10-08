@@ -1,0 +1,17 @@
+{
+  "name": "tafla",
+  "version": "0.1.0",
+  "description": "Calculation walkthroughs for AI tools. Show the working behind a calculation as a walkthrough: givens, steps with their formulas, spoken captions, and sliders that recalculate. Adds the Tafla MCP server and a skill that says when to use it.",
+  "author": {
+    "name": "GRID",
+    "url": "https://www.tafla.is"
+  },
+  "homepage": "https://www.tafla.is/agents",
+  "repository": "https://github.com/hoddmachine/tafla-plugin",
+  "keywords": [
+    "calculation",
+    "spreadsheet",
+    "explain",
+    "mcp"
+  ]
+}
