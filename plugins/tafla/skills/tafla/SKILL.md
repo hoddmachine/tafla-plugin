@@ -13,12 +13,25 @@ Call the `explain_calculation` tool on the `tafla` MCP server. It builds the cal
 
 The tool needs the `tafla` MCP server, signed in to the user's Tafla account. If the server is missing, or answers 401, do not work around it:
 
-1. If the server is missing: the plugin carries it, so reinstall the plugin with `claude plugin install tafla@tafla`, or enable its server under `/mcp`, then start a new session.
+1. If the server is missing: the plugin carries it, so reinstall the plugin with `claude plugin install tafla@tafla`, or enable its server under `/mcp`. The server loads at session start, so then either start a new session or make the call from a headless one (below).
 2. If it answers 401, sign the user in yourself. Run `claude mcp login plugin:tafla:tafla`. It opens the browser on Tafla, the user approves once, and the command finishes on its own. Tell the user the browser is open and what to click.
    - If it refuses because stdin is not a terminal, run it inside one: `script -q /dev/null claude mcp login plugin:tafla:tafla < /dev/null` (macOS and Linux).
    - If `claude mcp login` does not exist, Claude Code is older than 2.1. Say so, suggest `claude update`, and meanwhile the user can type `/mcp`, pick tafla and choose to authenticate.
 
-The details are at https://www.tafla.is/agents.
+Claude Code may ask the user to approve the install or the sign-in before it runs. That is its permission check, not a failure: say what it is asking for and carry on once they say yes.
+
+The details are at https://www.tafla.is/agents.md (the same page in the browser is https://www.tafla.is/agents).
+
+## If the tool is not loaded in this session
+
+MCP servers load when a session starts. If the server was installed or signed in during this session, the tool is not here yet, but a fresh headless session has it. Make the call from one and relay what it returns, instead of telling the user to restart:
+
+```sh
+claude -p --allowedTools mcp__plugin_tafla_tafla__explain_calculation \
+  "Call explain_calculation on the tafla MCP server with: <the title, inputs and formulas, spelled out>. Reply with the link and the values it returned, nothing else."
+```
+
+Run it with `env -u CLAUDECODE` in front if it refuses to start inside Claude Code. The tool's name follows the server: `mcp__plugin_tafla_tafla__explain_calculation` from the plugin, `mcp__tafla__explain_calculation` when the server was added by hand with `claude mcp add`.
 
 ## When to offer it
 
