@@ -31,3 +31,7 @@ The full setup, the tool's rules and an example call are at [tafla.is/agents](ht
 - `plugins/tafla/.mcp.json` is the server entry.
 - `plugins/tafla/skills/tafla/SKILL.md` tells Claude when to offer a walkthrough and what to send.
 - `plugins/tafla/server.json` is the manifest for the MCP registry.
+
+---
+
+[![Tafla, calculations you can understand and trust - Listed on Claude AI Directory](https://www.claudeai.directory/badge/tafla-calculations-you-can-understand-and-trust)](https://www.claudeai.directory/launches/tafla-calculations-you-can-understand-and-trust)
