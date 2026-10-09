@@ -11,10 +11,12 @@ Call the `explain_calculation` tool on the `tafla` MCP server. It builds the cal
 
 ## If the server is not available
 
-The tool needs the `tafla` MCP server, signed in to the user's Tafla account. If the server is missing, or answers 401, do not work around it. Tell the user:
+The tool needs the `tafla` MCP server, signed in to the user's Tafla account. If the server is missing, or answers 401, do not work around it:
 
 1. If the server is missing: the plugin carries it, so reinstall the plugin with `claude plugin install tafla@tafla`, or enable its server under `/mcp`, then start a new session.
-2. To sign in: type `/mcp`, pick tafla and choose to authenticate. The browser opens on Tafla to approve, once.
+2. If it answers 401, sign the user in yourself. Run `claude mcp login plugin:tafla:tafla`. It opens the browser on Tafla, the user approves once, and the command finishes on its own. Tell the user the browser is open and what to click.
+   - If it refuses because stdin is not a terminal, run it inside one: `script -q /dev/null claude mcp login plugin:tafla:tafla < /dev/null` (macOS and Linux).
+   - If `claude mcp login` does not exist, Claude Code is older than 2.1. Say so, suggest `claude update`, and meanwhile the user can type `/mcp`, pick tafla and choose to authenticate.
 
 The details are at https://www.tafla.is/agents.
 
