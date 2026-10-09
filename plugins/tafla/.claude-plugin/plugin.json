@@ -13,5 +13,6 @@
     "spreadsheet",
     "explain",
     "mcp"
-  ]
+  ],
+  "license": "MIT"
 }
