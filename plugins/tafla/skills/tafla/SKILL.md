@@ -13,7 +13,7 @@ Call the `explain_calculation` tool on the `tafla` MCP server. It builds the cal
 
 The tool needs the `tafla` MCP server, signed in to the user's Tafla account. If the server is missing, or answers 401, do not work around it. Tell the user:
 
-1. If the server is missing: `claude mcp add --transport http tafla https://www.tafla.is/api/mcp --scope user`, then start a new session.
+1. If the server is missing: the plugin carries it, so reinstall the plugin with `claude plugin install tafla@tafla`, or enable its server under `/mcp`, then start a new session.
 2. To sign in: type `/mcp`, pick tafla and choose to authenticate. The browser opens on Tafla to approve, once.
 
 The details are at https://www.tafla.is/agents.
